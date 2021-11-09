@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:insurance/pages/components/input_box.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:insurance/pages/components/topic_and_button.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Accept2 extends StatefulWidget {
   const Accept2({Key? key}) : super(key: key);
@@ -16,144 +18,125 @@ class _Accept2State extends State<Accept2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-      appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-        elevation: 0.0,
-        foregroundColor: Colors.black,
-        title: const Text(
-          'Case xxx',
-          style: TextStyle(
-            fontSize: 36.0,
-            fontFamily: 'Comfortaa',
-          ),
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(0.0, 8.0, 12.0, 8.0),
-            child: RaisedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/notification_1');
-              },
-              padding: const EdgeInsets.all(0),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0)),
-              child: Ink(
-                width: 90,
-                decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [
-                          Color.fromRGBO(11, 126, 193, 1),
-                          Color.fromRGBO(0, 255, 255, 1)
-                        ]),
-                    borderRadius: BorderRadius.circular(30.0)),
-                child: Container(
-                  constraints:
-                      const BoxConstraints(minWidth: 50.0, minHeight: 31.0),
-                  alignment: Alignment.center,
-                  child: const Text(
-                    '1',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-              ),
-            ),
-          )
-        ],
-      ),
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
-            InputBox(text: 'Policy Number', isObs: false),
-            InputBox(text: 'Vehicle Number', isObs: false),
-            InputBox(text: 'Driver Name', isObs: false),
-            InputBox(text: 'Driver Licence Details', isObs: false),
-            const SizedBox(
-              height: 8.0,
+            SizedBox(
+              height: 85.h,
             ),
+            TopicAndButton(
+              text: 'Case XXX',
+            ),
+            SizedBox(
+              height: 44.h,
+            ),
+            InputBox(text: 'Policy Number', isObs: false),
+            SizedBox(
+              height: 17.h,
+            ),
+            InputBox(text: 'Vehicle Number', isObs: false),
+            SizedBox(
+              height: 17.h,
+            ),
+            InputBox(text: 'Driver Name', isObs: false),
+            SizedBox(
+              height: 17.h,
+            ),
+            InputBox(text: 'Driver Licence Details', isObs: false),
+            SizedBox(height: 35.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                FlatButton(
-                  onPressed: () {
-                    takePhoto(ImageSource.camera);
-                  },
-                  child: const Text(
-                    'FRONT SIDE',
-                    style: TextStyle(
-                        fontFamily: 'Robot',
-                        fontSize: 13.0,
-                        color: Colors.white),
+                SizedBox(
+                  height: 50.h,
+                  width: 150.w,
+                  child: FlatButton(
+                    onPressed: () {
+                      takePhoto(ImageSource.camera);
+                    },
+                    child: Text(
+                      'FRONT SIDE',
+                      style: TextStyle(
+                          fontFamily: 'Robot',
+                          fontSize: 13.sp,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w900),
+                    ),
+                    color: const Color.fromARGB(255, 11, 126, 193),
                   ),
-                  color: const Color.fromRGBO(11, 126, 193, 1),
                 ),
-                FlatButton(
-                  onPressed: () {
-                    takePhoto(ImageSource.camera);
-                  },
-                  child: const Text(
-                    'REAR SIDE',
-                    style: TextStyle(
-                        fontFamily: 'Robot',
-                        fontSize: 13.0,
-                        color: Colors.white),
+                SizedBox(
+                  height: 50.h,
+                  width: 150.w,
+                  child: FlatButton(
+                    onPressed: () {
+                      takePhoto(ImageSource.camera);
+                    },
+                    child: Text(
+                      'REAR SIDE',
+                      style: TextStyle(
+                          fontFamily: 'Robot',
+                          fontSize: 13.sp,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w900),
+                    ),
+                    color: const Color.fromARGB(255, 11, 126, 193),
                   ),
-                  color: const Color.fromRGBO(11, 126, 193, 1),
                 ),
               ],
             ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(10, 12, 10, 10),
+            SizedBox(height: 35.h),
+            SizedBox(
+              height: 50.h,
+              width: 300.w,
               child: FlatButton(
                 onPressed: () {},
-                child: const Text(
+                child: Text(
                   'LOCATION',
                   style: TextStyle(
-                      fontSize: 13.0,
+                      fontSize: 13.sp,
                       fontFamily: 'Roboto',
-                      color: Colors.white),
+                      color: Colors.white,
+                      fontWeight: FontWeight.w900),
                 ),
-                color: Colors.black,
-                height: 53.0,
-                minWidth: 360.0,
+                color: const Color.fromARGB(255, 11, 126, 193),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(2.0),
+            SizedBox(height: 11.h),
+            SizedBox(
+              height: 50.h,
+              width: 300.w,
               child: FlatButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/accept_3');
                 },
-                child: const Text(
+                child: Text(
                   'NEXT',
                   style: TextStyle(
-                      fontSize: 13.0,
+                      fontSize: 13.sp,
                       fontFamily: 'Roboto',
-                      color: Colors.white),
+                      color: Colors.white,
+                      fontWeight: FontWeight.w900),
                 ),
-                color: const Color.fromRGBO(11, 126, 193, 1),
-                height: 53.0,
-                minWidth: 360.0,
+                color: const Color.fromARGB(255, 160, 213, 244),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
+            SizedBox(height: 11.h),
+            SizedBox(
+              height: 50.h,
+              width: 300.w,
               child: FlatButton(
-                onPressed: () {
-                  Navigator.popAndPushNamed(context, '/contact');
-                },
-                child: const Text(
+                onPressed: () {},
+                child: Text(
                   'CONTACT REGIONAL OFFICE',
                   style: TextStyle(
-                      fontSize: 13.0,
+                      fontSize: 13.sp,
                       fontFamily: 'Roboto',
-                      color: Colors.white),
+                      color: Colors.white,
+                      fontWeight: FontWeight.w900),
                 ),
-                color: Colors.black,
-                height: 53.0,
-                minWidth: 360.0,
+                color: Color.fromARGB(255, 11, 126, 193),
               ),
             ),
           ],

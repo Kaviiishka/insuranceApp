@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
-
-import 'components/body_contact.dart';
+import 'package:insurance/pages/components/topic_and_button.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Notification_1 extends StatefulWidget {
   const Notification_1({Key? key}) : super(key: key);
@@ -14,17 +13,79 @@ class _Notification_1State extends State<Notification_1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Notifications',
-          style: TextStyle(fontFamily: 'Comfortaa', fontSize: 36),
-        ),
-        elevation: 0,
-        foregroundColor: Colors.black,
-        backgroundColor: Colors.white,
+      body: Column(
+        children: <Widget>[
+          SizedBox(
+            height: 85.h,
+          ),
+          TopicAndButton(text: 'Notification'),
+          SizedBox(
+            height: 36.h,
+          ),
+          SizedBox(
+            height: 94.h,
+            width: 359.w,
+            child: Card(
+              child: RaisedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/accept_1');
+                },
+                child: const Text('Notification'),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 20.h,
+          ),
+          SizedBox(
+            height: 50.h,
+            width: 300.w,
+            child: FlatButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/contact');
+              },
+              child: Text(
+                'CONTACT REGIONAL OFFICE',
+                style: TextStyle(
+                    fontFamily: 'Roboto',
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.white),
+              ),
+              color: const Color.fromARGB(255, 11, 126, 193),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(6.r)),
+            ),
+          ),
+          SizedBox(
+            height: 20.h,
+          ),
+          SizedBox(
+            height: 50.h,
+            width: 300.w,
+            child: FlatButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text(
+                'BACK',
+                style: TextStyle(
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.w900,
+                    fontFamily: 'Roboto',
+                    color: Colors.white),
+              ),
+              color: const Color.fromARGB(255, 160, 213, 244),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(6.r)),
+            ),
+          ),
+        ],
       ),
-      body: Body_contact(),
-      backgroundColor: Colors.cyan[50],
     );
+  }
+
+  Widget contactNumber1() {
+    return TextFormField();
   }
 }

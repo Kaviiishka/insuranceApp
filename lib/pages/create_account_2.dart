@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:insurance/pages/components/input_box.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CreateAccount2 extends StatefulWidget {
   const CreateAccount2({Key? key}) : super(key: key);
@@ -12,43 +13,40 @@ class _CreateAccount2State extends State<CreateAccount2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text(
-          'Create Account',
-          style: TextStyle(
-            fontFamily: 'Comfortaa',
-            fontSize: 36.0,
-          ),
-        ),
-        elevation: 0.0,
-        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-        foregroundColor: Colors.black,
-      ),
-      body: SingleChildScrollView(
+      body: Center(
         child: Column(
           children: [
-            const SizedBox(
-              height: 16.0,
+            SizedBox(
+              height: 98.h,
+            ),
+            Text(
+              'Create Account',
+              style: TextStyle(
+                fontFamily: 'Comfortaa',
+                fontSize: 36.sp,
+              ),
+            ),
+            SizedBox(
+              height: 40.h,
             ),
             InputBox(text: 'User Name', isObs: false),
-            const SizedBox(
-              height: 16.0,
+            SizedBox(
+              height: 16.h,
             ),
             InputBox(
               text: 'Email',
               isObs: false,
             ),
-            const SizedBox(
-              height: 16.0,
+            SizedBox(
+              height: 16.h,
             ),
             InputBox(text: 'Password', isObs: true),
             SizedBox(
-              height: 16.0,
+              height: 45.h,
             ),
-            Padding(
-              padding: const EdgeInsets.all(13.0),
+            SizedBox(
+              height: 50.h,
+              width: 150.w,
               child: FlatButton(
                 onPressed: () {
                   Navigator.pushNamedAndRemoveUntil(
@@ -61,9 +59,9 @@ class _CreateAccount2State extends State<CreateAccount2> {
                       fontFamily: 'Roboto',
                       color: Colors.white),
                 ),
-                color: Color.fromRGBO(11, 126, 193, 1),
-                height: 53.0,
-                minWidth: 360.0,
+                color: const Color.fromARGB(255, 11, 126, 193),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(6.r)),
               ),
             )
           ],

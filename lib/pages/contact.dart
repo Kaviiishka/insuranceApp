@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
-import 'components/body_contact.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Contact extends StatefulWidget {
   //const Review({Key? key}) : super(key: key);
@@ -16,7 +16,7 @@ class _ContactState extends State<Contact> {
       appBar: AppBar(
         title: Text(
           'Contact',
-          style: TextStyle(fontFamily: 'Comfortaa', fontSize: 36),
+          style: TextStyle(fontFamily: 'Comfortaa', fontSize: 36.sp),
         ),
         elevation: 0,
         foregroundColor: Colors.black,
@@ -27,30 +27,30 @@ class _ContactState extends State<Contact> {
         child: ListView(
           children: <Widget>[
             SizedBox(
-              height: 60,
+              height: 60.sp,
               child: Text(
                 'Branch name xxxx',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Comfortaa',
-                  fontSize: 30,
+                  fontSize: 30.sp,
                 ),
               ),
             ),
             SizedBox(
-              height: 20,
+              height: 20.sp,
             ),
             contactNumber1(),
             SizedBox(
-              height: 20,
+              height: 20.sp,
             ),
             contactNumber2(),
             SizedBox(
-              height: 20,
+              height: 20.sp,
             ),
             contactNumber3(),
             SizedBox(
-              height: 50,
+              height: 50.sp,
             ),
             back(),
           ],
@@ -70,7 +70,7 @@ class _ContactState extends State<Contact> {
         child: Text('CONTACT NUMBER 1',
             style: TextStyle(
               fontFamily: 'Roboto',
-              fontSize: 13,
+              fontSize: 13.sp,
             )),
         color: Color.fromRGBO(11, 126, 193, 1),
       ),
@@ -86,7 +86,7 @@ class _ContactState extends State<Contact> {
           FlutterPhoneDirectCaller.callNumber(number);
         },
         child: Text('CONTACT NUMBER 2',
-            style: TextStyle(fontFamily: 'Roboto', fontSize: 13)),
+            style: TextStyle(fontFamily: 'Roboto', fontSize: 13.sp)),
         color: Color.fromRGBO(11, 126, 193, 1),
       ),
     );
@@ -101,7 +101,7 @@ class _ContactState extends State<Contact> {
           FlutterPhoneDirectCaller.callNumber(number);
         },
         child: Text('CONTACT NUMBER 3',
-            style: TextStyle(fontFamily: 'Roboto', fontSize: 13)),
+            style: TextStyle(fontFamily: 'Roboto', fontSize: 13.sp)),
         color: Color.fromRGBO(11, 126, 193, 1),
       ),
     );
@@ -114,8 +114,8 @@ class _ContactState extends State<Contact> {
         onPressed: () {
           Navigator.popAndPushNamed(context, '/welcome');
         },
-        child:
-            Text('BACK', style: TextStyle(fontFamily: 'Roboto', fontSize: 13)),
+        child: Text('BACK',
+            style: TextStyle(fontFamily: 'Roboto', fontSize: 13.sp)),
         color: Color.fromRGBO(11, 126, 193, 1),
       ),
     );

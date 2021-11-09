@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Review extends StatefulWidget {
   const Review({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class _ReviewState extends State<Review> {
       appBar: AppBar(
         title: Text(
           'Review',
-          style: TextStyle(fontFamily: 'Comfortaa', fontSize: 36),
+          style: TextStyle(fontFamily: 'Comfortaa', fontSize: 36.sp),
         ),
         elevation: 0,
         foregroundColor: Colors.black,

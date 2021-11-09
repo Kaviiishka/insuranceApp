@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:insurance/pages/components/input_box.dart';
 
 class LoginScrn extends StatefulWidget {
-  const LoginScrn({Key? key}) : super(key: key);
-
   @override
   _LoginScrnState createState() => _LoginScrnState();
 }
@@ -11,69 +11,81 @@ class _LoginScrnState extends State<LoginScrn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        foregroundColor: Colors.black,
-        centerTitle: true,
-        title: const Text(
-          'Log In',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-              fontFamily: 'Comfortaa', fontSize: 30.0, color: Colors.black),
-        ),
-        elevation: 0.0,
-        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-      ),
-      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+      backgroundColor: Colors.white,
       body: Center(
         child: Column(
           children: [
-            const SizedBox(
-              height: 40.0,
+            SizedBox(
+              height: 98.h,
             ),
-            const Text('User Name',
-                style: TextStyle(fontFamily: 'Comfortaa', fontSize: 20.0)),
-            const Padding(
-              padding: EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 8.0),
-              child: TextField(
-                  decoration: InputDecoration(
-                      fillColor: Colors.white,
-                      filled: true,
-                      border: OutlineInputBorder())),
+            Text(
+              'SIGN IN',
+              style: TextStyle(
+                  fontFamily: 'Comfortaa',
+                  fontSize: 30.sp,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.black),
             ),
-            const SizedBox(
-              height: 30.0,
+            SizedBox(
+              height: 56.h,
             ),
-            const Text('Password',
-                style: TextStyle(fontFamily: 'Comfortaa', fontSize: 20.0)),
-            const Padding(
-              padding: EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 8.0),
-              child: TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                      fillColor: Colors.white,
-                      filled: true,
-                      border: OutlineInputBorder())),
+            InputBox(
+              text: 'User Name',
+              isObs: false,
             ),
-            const SizedBox(
-              height: 30.0,
+            SizedBox(
+              height: 35.h,
             ),
-            FlatButton(
-              onPressed: () {
-                Navigator.pushNamedAndRemoveUntil(
-                    context, '/welcome', (route) => false);
-              },
-              child: const Text(
-                'Log In',
-                style: TextStyle(
-                  fontFamily: 'Roboto',
-                  color: Colors.white,
+            InputBox(
+              text: 'Password',
+              isObs: true,
+            ),
+            SizedBox(
+              height: 52.h,
+            ),
+            SizedBox(
+              height: 50.h,
+              width: 150.w,
+              child: FlatButton(
+                onPressed: () {
+                  Navigator.pushNamedAndRemoveUntil(
+                      context, '/welcome', (route) => false);
+                },
+                child: Text(
+                  'LOGIN',
+                  style: TextStyle(
+                      fontFamily: 'Roboto',
+                      color: Colors.white,
+                      fontWeight: FontWeight.w900,
+                      fontSize: 13.sp),
                 ),
+                color: const Color.fromARGB(255, 11, 126, 193),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(6.r)),
               ),
-              color: Color.fromRGBO(11, 126, 193, 1),
-              height: 45.0,
-              minWidth: 200.0,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5)),
+            ),
+            SizedBox(
+              height: 34.h,
+            ),
+            SizedBox(
+              height: 50.h,
+              width: 150.w,
+              child: FlatButton(
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/');
+                },
+                child: Text(
+                  'BACK',
+                  style: TextStyle(
+                      fontFamily: 'Roboto',
+                      color: Colors.white,
+                      fontSize: 13.sp,
+                      fontWeight: FontWeight.w900),
+                ),
+                color: const Color.fromARGB(255, 160, 213, 244),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(6.r)),
+              ),
             )
           ],
         ),

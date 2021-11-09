@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Body_contact extends StatefulWidget {
   //const ({ Key? key }) : super(key: key);
@@ -12,11 +13,11 @@ class _Body_contactState extends State<Body_contact> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 20.w),
         child: ListView(
           children: <Widget>[
             SizedBox(
-              height: 20,
+              height: 20.sp,
             ),
             Client(),
           ],

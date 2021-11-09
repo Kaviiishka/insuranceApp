@@ -27,10 +27,10 @@ class _ProfilePicState extends State<ProfilePic> {
         overflow: Overflow.visible,
         children: [
           CircleAvatar(
-            backgroundImage: AssetImage('assets/profile.png'),
+            backgroundImage: AssetImage('assets/hiru.jpg'),
             //_imageFile == null
-            //? AssetImage('assets/profile.png')
-            //: FileImage(File(_imageFile.path)),
+            //   ? AssetImage('assets/profile.png')
+            //   : FileImage(File(_imageFile.path)),
           ),
           Positioned(
             right: -10,
@@ -104,9 +104,10 @@ class _ProfilePicState extends State<ProfilePic> {
   }
 
   void takePhoto(ImageSource source) async {
-    final pickedFile = await _picker.getImage(
+    final PickedFile? pickedFile = await _picker.getImage(
       source: source,
     );
+
     setState(() {
       _imageFile = PickedFile as PickedFile;
     });
